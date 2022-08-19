@@ -1,0 +1,5 @@
+requests==2.27.1
+pymongo==4.0.1
+python-telegram-bot==13.11
+dnspython==2.2.0
+python-dateutil==2.8.2

@@ -1,0 +1,36 @@
+{
+  "name": "Copy SYS V1",
+  "description": "Telegram bot to copy signal from multi channels & and publish it in yours",
+    "buildpacks": [{
+    "url": "heroku/python"
+  }],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "repository": "https://github.com/XredaX/test11111111",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Obtain a Telegram bot token by contacting @BotFather",
+      "required": true,
+      "value": ""
+    },
+    "ADMIN_ID": {
+      "description": "Add id of the admin",
+      "required": true,
+      "value": ""
+    },
+    "SPOT_ID": {
+      "description": "Add id of the spot channel",
+      "required": true,
+      "value": ""
+    },
+    "FUTURE_ID": {
+      "description": "Add id of the future channel",
+      "required": true,
+      "value": ""
+    }
+  }
+}
