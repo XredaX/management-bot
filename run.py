@@ -13,7 +13,7 @@ membership = 0
 startmembership = 00-00-0000
 endmembership = 00-00-0000
 iduser = 000000000
-chat_admin1 = 646510124
+chat_admin1 = "646510124"
 chat_admin2=Config.ADMIN_ID
 offer = ""
 # chatid_spot=-1001743888874
@@ -34,7 +34,7 @@ def banmembers(chat_id, user_id):
 
 def start(update, context):
     try:
-        if update.message.chat_id == chat_admin1 or update.message.chat_id == chat_admin2:
+        if str(update.message.chat_id) == chat_admin1 or str(update.message.chat_id) == chat_admin2:
             keyboard = [[KeyboardButton("👤 إضافة عضو جديد "), KeyboardButton("👥 قائمة المشتركين ")], [KeyboardButton("⚙️ تعديل بيانات المشتركين")], [KeyboardButton("🗑 حذف المشتركين")]]
             reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
             update.message.reply_text('*👋 مرحبا بك عزيزي الأدمن  *`'+update.effective_user.full_name+'`*\n\nيمكنك الإختيار من القائمة الموجودة في الأسفل 👇*', parse_mode="Markdown", reply_markup=reply_markup)
@@ -51,7 +51,7 @@ def start(update, context):
         pass
 
 def handlmsg(update, context):
-    if update.message.chat_id == chat_admin1 or update.message.chat_id == chat_admin2:
+    if str(update.message.chat_id) == chat_admin1 or str(update.message.chat_id) == chat_admin2:
         global answer, fullname, membership, startmembership, endmembership, iduser, offer
 
         if update.message.text == "⛔️ إلغاء":
